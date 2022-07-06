@@ -1,0 +1,63 @@
+.amenities,.policies{
+    display:none;
+    background : #fff;
+    position : absolute;
+    top : 0;
+    padding : 10px 50px;
+    width : 100%;
+    height : auto;
+    z-index : 1;
+    border-radius : 15px;
+    border-bottom-left-radius : 0;
+    border-bottom-right-radius : 0;
+    box-shadow: 0 3px 3px 0.1px rgba(0,0,0,0.09);
+
+    .btn-close{
+        position : absolute;
+        width : 50px;
+        height : 50px;
+        right : 0;
+        top : 0;
+        padding : 15px;
+    }
+    h3{
+        display : block;
+        width: 100%;
+        height : 100%;
+        font-size : 1.2em;
+        font-family : "Abel";
+        margin : 10px 0;
+        text-align : center;
+    }
+    p {
+      font-size : 1em;  
+    }
+    .amenity-section{
+        position : relative;
+        display : block;
+        padding : 1%;
+        width : 100%;
+    }
+    .amenity-title{
+        display : inline-block;
+        font-weight : bolder;
+        ul{
+            padding : 5px;
+            font-weight: 200;
+            line-height : 15px;
+            font-size : 0.8em;
+        }
+    }
+    .amenity-other{
+        display : block;
+        width : 100%;
+        font-weight : bolder;
+        li{
+            display : inline; padding : 5px;
+            font-weight: 200;
+            line-height : 15px;
+            font-size : 0.8em;
+        }
+    }
+
+}

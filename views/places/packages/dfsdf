@@ -1,0 +1,65 @@
+<div class="row">
+        
+        <div class="column column-12">
+            <h1 class="board-title">Sitabani Forest Landscape</h1>
+           
+            <div class="row">
+                <div class="column column-12">
+                    <div class="board left-board icolumn icolumn-6" style="border:none !important; box-shadow: none !important;">
+                        <h3>About The Sitabani Forest Landscape</h3>
+                        <p style="background: #ebebeb; padding: 15px;">
+                            Sitabani Forest Zone is also known as Corbett Landscape. Corbett Landscape is a beautiful tourist zone for visitors due to its 
+                            fabulous attraction of river stream, floura and founa. Sitabani is now a part of Corbett Tiger Reserve. In this, Safari of Sitabani 
+                            Landscape, you got a chance to spot a tiger, leopard, different species of deer such as barking deer, cheetal, sambhar and 
+                            other species of animals. Sitabani is also a famous place for bird lovers, because various types of birds such as Emerald Dove,
+                            White Bush Chat, Oriental Paid and more species found in this area.
+                        </p>
+                    </div>
+                    <div class="board left-board icolumn icolumn-6" style="">
+                        <img src="/public/img/places/ramnagar/sitabani/about/1.jpg" width="100%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column column-12">
+                    <div class="board right-board icolumn icolumn-6" style="">
+                        <img src="/public/img/places/ramnagar/sitabani/about/2.jpg" width="100%">   
+                    </div>
+
+                    <div class="board left-board icolumn icolumn-6" style="border:none !important; box-shadow: none !important;">
+                        <h3>Safari Timings - Winter Season</h3>
+                        <p>
+                            07:00 AM to 10:00 AM (Morning Jeep Safari)<br/>
+                            02:00 PM to 05:30 PM (Evening Jeep Safari)
+                        </p>
+                        <h3>Safari Timings - Summer Season</h3>
+                        <p> 06:00 AM to 09:30 AM (Morning Jeep Safari)<br/>
+                            03:00 PM to 06:30 PM (Evening Jeep Safari)
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                <div class="column column-12">
+                    <div class="board left-board icolumn icolumn-6" style="border:none !important; box-shadow: none !important;">
+                        <h3>Booking Guidelines</h3>
+                        <p>There are two types of booking in Corbett National Park<br/>
+                            i) Day Visit Booking - (Morning : 06:00 AM to 10:00 AM), (Evening : 02:00 PM to 06:00 PM)<br/>
+                            ii) Night Stay Booking (Dhikala, Bijrani, Durgadevi Only)<br/>
+                            You need to follow these instructions before booking -<br/>
+                            1. Allowed ID Proofs : Driving License, PAN Card, Voter ID, Passport, Student ID etc.<br/>
+                            Note : You need to take the same ID Proof on your visit that is mentioned in your Booking Permit.<br/>
+                            Note : Booking permit charges are non-refundable.<br/><br/>
+                            2. Corbett Landscape allowes 6 persons maximum in single Gypsy.<br/>
+                            3. All the facilities of Tourist Rest Houses are provided by forest department only.
+                        </p>
+                    </div>
+                    <div class="board left-board icolumn icolumn-6" style="">
+                        <img src="/inv/public/img/places/ramnagar/sitabani/about/3.jpg"  width="100%">   
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>

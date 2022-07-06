@@ -1,0 +1,1184 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/*@import url('https://fonts.googleapis.com/css?family=Open Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img,ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, lOpen Sans, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section,summary,time, mark, audio, video {	margin: 0;	padding: 0;	border: 0;	font-size: 100%;	font: inherit;	vertical-align: baseline;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {	display: block;}
+body {    font-family: "Open Sans";	line-height: 1;}
+ol, ul {	list-style: none;}
+blockquote, q {	quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}
+table {	border-collapse: collapse;	border-spacing: 0;}
+
+/***************GRID*****************/
+
+.row, .column {box-sizing: border-box;}
+.row:before,.row:after {
+	/*Before and after the rendering of row and column the content is empty and this displayed as table fashion*/
+	content: " ";
+	display: table;
+}
+.row:after {
+	/*in order to align the columns horizontally, grid system will float the columns. this means you need to clear the floating elements
+	in the row to maintain the structure of the layout. this is where a clearfix comes in. by applying clearfix, row will accomodate the column it
+	contains without adding to the markup.
+	*/
+	clear: both;
+}
+.column {
+	/*here the column positioned relatively to allow any absolutely positioned content within the column to be position relative to that column.
+	the column is then floated left for horizontal alignment, which will cause the element to become display:block; even if it did not start out the way
+	*/
+	position: relative;
+	float: left;
+	display: block;
+	margin-bottom: 1.6%;
+}
+
+.column + .column {
+	/*Gutters helps to create separation between columns. We set adjacent siblings left and bottom margin*/
+	margin-left: 1.6%;
+}
+/*In 12 grid system, we have calculated all possible widths for each type of column*/
+.column-1 {    width: 6.86666666667%;}
+.column-2 {    width: 15.3333333333%;}
+.column-3 {    width: 23.8%;}
+.column-4 {    width: 32.2666666667%;}
+.column-5 {    width: 40.7333333333%;}
+.column-6 {    width: 49.2%;}
+.column-7 {    width: 57.6666666667%;}
+.column-8 {    width: 66.1333333333%;}
+.column-9 {    width: 74.6%;}
+.column-10 {    width: 83.0666666667%;}
+.column-11 {    width: 91.5333333333%;}
+.column-12 {    width: 100%;margin-left: 0;}
+/*This is for mobile layout*/
+@media only screen and (max-width: 550px) {
+	.column-1,.column-2,.column-3,.column-4,.column-5,.column-6,.column-7,.column-8,.column-9,.column-10,.column-11,.column-12 {
+        float: none; width: auto;
+    }
+    .column + .column {
+    	/*In small screens, gutter is zero.*/
+            margin-left: 0;
+        }
+}
+
+@media only screen and (max-width: 550px) {
+	.row {
+		margin-bottom: 0;
+	}
+    .column {
+    	margin-bottom: 10px;
+    }
+    .row:last-child .column:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/*Now we styling each column basically*/
+
+.column {
+    background: #fff;
+
+    border-radius: 2px;
+    color: #777;
+    padding: 5px;
+    min-height: 50px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-left: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 3px 3px 0.1px rgba(0,0,0,0.09);
+
+}
+
+.row {    margin-bottom: 10px;}
+.row:last-child {    margin-bottom: 0;}
+.column .column {    box-shadow: none; border:none;}
+
+/*------------------------END GRID-------------------*/
+
+/*-------------------------IMPORTANT GRID LAYOUT---------------------*/
+.irow, .icolumn {box-sizing: border-box !important;}
+.irow:before,.irow:after {
+	/*Before and after the rendering of row and column the content is empty and this displayed as table fashion*/
+	content: " "  !important;
+	display: table  !important;
+}
+.irow:after {
+	/*in order to align the columns horizontally, grid system will float the columns. this means you need to clear the floating elements
+	in the row to maintain the structure of the layout. this is where a clearfix comes in. by applying clearfix, row will accomodate the column it
+	contains without adding to the markup.
+	*/
+	clear: both  !important;
+}
+.icolumn {
+	/*here the column positioned relatively to allow any absolutely positioned content within the column to be position relative to that column.
+	the column is then floated left for horizontal alignment, which will cause the element to become display:block; even if it did not start out the way
+	*/
+	position: relative  !important;
+	float: left  !important;
+	display: block  !important;
+	margin-bottom: 1.6%  !important;
+}
+
+.icolumn + .icolumn {
+	/*Gutters helps to create separation between columns. We set adjacent siblings left and bottom margin*/
+	margin-left: 1.6%  !important;
+}
+/*In 12 grid system, we have calculated all possible widths for each type of column*/
+.icolumn-1 {    width: 6.86666666667%  !important;}
+.icolumn-2 {    width: 15.3333333333% !important;}
+.icolumn-3 {    width: 23.8% !important;}
+.icolumn-4 {    width: 32.2666666667% !important;}
+.icolumn-5 {    width: 40.7333333333% !important;}
+.icolumn-6 {    width: 49.2% !important;}
+.icolumn-7 {    width: 57.6666666667% !important;}
+.icolumn-8 {    width: 66.1333333333% !important;}
+.icolumn-9 {    width: 74.6% !important;}
+.icolumn-10 {    width: 83.0666666667% !important;}
+.icolumn-11 {    width: 91.5333333333% !important;}
+.icolumn-12 {    width: 100% !important;margin-left: 0 !important;}
+/*This is for mobile layout*/
+@media only screen and (max-width: 550px) {
+	.icolumn-1,.icolumn-2,.icolumn-3,.icolumn-4,.icolumn-5,.icolumn-6,.icolumn-7,.icolumn-8,.icolumn-9,.icolumn-10,.icolumn-11,.icolumn-12 {
+        float: none !important; width: auto !important;
+    }
+    .icolumn + .icolumn {
+    	/*In small screens, gutter is zero.*/
+            margin-left: 0 !important;
+        }
+}
+
+@media only screen and (max-width: 550px) {
+	.irow {
+		margin-bottom: 0 !important;
+	}
+    .icolumn {
+    	margin-bottom: 10px !important;
+    }
+    .irow:last-child .icolumn:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+/*Now we styling each column basically*/
+
+.icolumn {
+    background: #fff !important;
+    border-top: 1px solid rgba(0,0,0,0.05) !important;
+    border-left: 1px solid rgba(0,0,0,0.05) !important;
+    border-radius: 2px !important;
+    color: #777 !important;
+    padding: 5px !important;
+    min-height: 50px !important;
+    box-shadow: 0 3px 3px 0.1px rgba(0,0,0,0.09) !important;
+
+}
+
+.irow {    margin-bottom: 10px !important;}
+.irow:last-child {    margin-bottom: 0 !important;}
+.icolumn .icolumn {    box-shadow: none !important; border:none !important;}
+
+
+
+/*Resetting Ended. Actual Coding Started*/
+
+*,*:before,*:after{box-sizing: border-box;}
+a{text-decoration: none; color: #000;}
+
+/*The Toppest Header Block*/
+header
+	{
+		position: fixed;
+		display: flex;
+		padding: 0 1%;
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
+		height: 50px;
+		background: #ffffff;
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.09);
+		z-index: 11; /*Always on TOP of the page*/
+	}
+/*Brand Box - Contains Logo and the Domain Name*/
+/*The top left corner that contains the logo, trigger and brand name*/
+.brand-box
+	{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 180px;
+		overflow: hidden;
+		height: 50px;
+	}
+
+
+/**************************************1.I.(a).The Trigger*****************************************/
+		/*The trigger box*/
+		.fa-box,.logo-box{display: flex;align-items: center;width: 50px;height: 50px;padding: 10px;  /*Now block left 30px radius to enter any items*/}
+		/*Inside Round Shape Hover Panel for trigger*/
+		.fa-box span{margin: 0;	padding: 0;	display: flex;align-items: center;width: 30px;height: 30px;border-radius: 50%;	}
+		/*Hover Effect on trigger*/
+		.fa-box span:hover{cursor: pointer; background: #ebebeb;}
+/*--------------------------------------------END-------------------------------------------------*/
+
+
+/****************************************1.I.(b). The Logo Setting*********************************/
+
+.logo-box{ padding: 5px;}
+
+
+
+/*--------------------------------------------END-------------------------------------------------*/
+
+
+/****************************************1.I.(b). The Brand Name*********************************/
+
+.name-box{font-size: 1.2em;	font-family: "Ubuntu";	font-weight: lighter;height: 100%;display: flex;padding : 0 2%;align-items: center;	}
+		.name-box a{color : #03b383}
+		.name-box:hover{cursor: pointer; background: #ebebeb;}
+
+/*--------------------------------------------END-------------------------------------------------*/
+
+
+/****************************************1.II. The User Panel Design*********************************/
+
+.user-box{
+			display: flex; flex-direction: row; align-items: center; overflow: hidden; width: 100px; height: 50px;
+		}
+
+		.user-info{
+			width: 40px; height: 40px; border-radius: 50%; background: #ebebeb;
+		}
+		.user-info:hover{cursor: pointer;}
+/*--------------------------------------------END-------------------------------------------------*/
+
+
+/******************************SEARCH TRIGGER STYLE ***********************************************/
+
+.search-box{display: flex; flex-direction: row; align-items: center; flex-grow: 1; height: 50px; padding: 0 5%;}
+		.search-box.inactive{visibility: hidden;}
+				@media only screen and (max-width: 480px){
+					.brand-box{order: 1;}
+					.user-box{order: 2;}
+					.search-box{display : none;}
+
+				}
+		.suggest.inactive{display: none;}
+.trip-box{width: 100%;}
+				/*Resetting input field for varius browsers*/
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration,
+{
+	display: none;
+}
+
+input[type=list]::-webkit-search-decoration,
+input[type=list]::-webkit-search-cancel-button,
+input[type=list]::-webkit-search-results-button,
+input[type=list]::-webkit-search-results-decoration,
+{
+	display: none;
+}
+
+input[type=date]::-webkit-search-decoration,
+input[type=date]::-webkit-search-cancel-button,
+input[type=date]::-webkit-search-results-button,
+input[type=date]::-webkit-search-results-decoration,
+{
+	display: none;
+}
+input[type=search], input[type=list],input[type=date]{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	-o-appearance:none;
+	appearance:none;
+	border:none;
+}
+/*designing our input field*/
+input[type="search"], input[type=list],input[type=date]{
+	border-radius: 50px;
+}
+
+#key_search{
+	display: block;
+	height: 80%;
+	width: 100%;
+	font-size: 1em;
+	font-family: "Open Sans";
+	font-weight: lighter;
+	padding: 0 2em 0 1em;
+	color: #555;
+	transition: transform 0.3s, opacity 0.3s, background 0.9s;
+	border-style:none;
+}
+
+.trip-input{
+	display: block;
+	height: 25px;
+	width: 100%;
+	font-family: "Open Sans";
+	font-size: 1.2em;
+	margin-top: 7px;
+	padding: 0 2em 0 1em;
+	outline: none;
+}
+
+.trip-button{
+	display: block;
+	height: 50px;
+	width: 100%;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 1.3em;
+	font-family: "Open Sans";
+	font-weight: lighter;
+	margin-top: 5px;
+	background: #ffc252;
+	border-radius: 2px;
+}
+
+#key_search:focus{
+	outline: none;
+	background: #e0e0e0;
+}
+
+.suggest{
+	display: flex;
+	flex-direction: row;
+	padding: 5%;
+	width: 100%;
+	height: auto;
+	background: #03b383;
+	box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.39);
+
+}
+.trip-box h1{text-align: center; width: 100%; margin-top: 50px;height: 50px; line-height: 50px; margin-bottom: 10px;
+	font-family: "Open Sans"; font-size: 1.8em;color: #000; font-weight: lighter;
+}
+
+/*Search Design Ended*/
+
+.footer{
+
+				padding: 1%;
+				font-family: "Advent Pro";
+				font-size: 1em;
+				background: #242424;
+			}
+
+			.footer-link{
+				display: flex;
+				flex-direction: column;
+				background: inherit;
+
+			}
+
+			.footer-link a{color: #ffffff; line-height: 30px;}
+			@media only screen and (max-width: 480px) {
+				.footer-link a,.footer-link address{text-align: center;}
+
+			}
+Footer Ended*/
+
+.caro{text-align : center !important;}
+.caro-card{display: flex; flex-direction: column; width: 200px; height: auto; background: #ffffff; border-radius: 2px; box-shadow:0px 0px 10px 5px rgba(0, 0, 0, 0.03); margin: 10px;}
+					.card-img{display: block; width: 100%; height: auto; background: #000; border-radius: 2px;}
+
+
+					.card-info{
+						display: block;
+						width: 100%;
+						height: 40%;
+						background: #ffffff;
+						z-index: 111;
+					}
+					.item-title{position: relative; display: block; width: 100%; overflow: hidden; height: 30px; line-height: 30px;  text-align: center; color: #1ab383;  font-size: 1em;	font-weight: lighter;}
+					.item-info{
+						display: block; width: 100%; height: 34px;  font-size: 0.7em; padding: 0 10px; font-weight: lighter;}
+						.btn-block{
+							display: block;	width: 100%; height: auto;
+						}
+						.btn-block button{
+							display: inline-block; outline: none; border: none; width: 49%; height: 40px; box-sizing: border-box; border-radius: 1px;
+						}
+
+
+
+.lw{
+			-webkit-text-stroke: 0.5px #ebebeb;
+		}
+		.lwcaro{-webkit-text-stroke : 0.5px;}
+		body{background: #f4f6f7;}
+		.nbs{box-shadow: none;}
+		/*Header Box Only Design*/
+
+
+.wrapper{display: block; width: 100%; height: auto; padding-top : 50px;}
+
+.banner-6 img{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+#home-banner .owl-nav
+{position: absolute !important;
+top: 40% !important;
+width: 100%;
+height: 50px;
+display: flex;
+flex-direction: row;
+align-items: center;
+vertical-align: center;
+padding : 10px 0;
+margin : 0;
+ }
+#home-banner .owl-prev, #home-banner .owl-next{
+	width: 30px; height: 30px; font-size: 1em; background : #ffffff; border-radius: 50%; outline: none;margin : 0;
+}
+#home-banner .owl-prev:hover, #home-banner .owl-next:hover{background : #fff;}
+#home-banner .owl-prev.disabled span, #home-banner .owl-next.disabled span{color: rgba(0,0,0,0.1);}
+#home-banner .owl-prev span, #home-banner .owl-next span{font-weight: bolder; font-size: 1em; color: #087955;}
+#home-banner .owl-prev{position : absolute;left: 10px;}
+#home-banner .owl-next{position: absolute; right: 10px; }
+#home-banner .owl-dots{position: absolute; display: flex; flex-direction: row; align-items : center; left : 45%; align-content: center; bottom : 5px; width: auto; height: 20px; background: rgba(0,0,0,0.1); border-radius: 15px;}
+#home-banner .owl-dots .owl-dot{display: block; width : 10px; height: 10px; margin: 0 5px; border-radius: 50%; background: rgba(0,0,0,0.4); outline: none;}
+#home-banner .owl-dots .owl-dot.active{background: #087955;}
+#home-banner .owl-dots .owl-dot span{visibility: hidden;}
+
+
+
+.gallery-banner .owl-nav
+{position: absolute !important;
+top: 40% !important;
+width: 100%;
+height: 50px;
+display: flex;
+flex-direction: row;
+align-items: center;
+vertical-align: center;
+padding : 10px 0;
+margin : 0;
+ }
+.gallery-banner .owl-prev, .gallery-banner .owl-next{
+	width: 30px; height: 30px; font-size: 1em; background : #ffffff!important; border-radius: 50%; outline: none;margin : 0;
+}
+.gallery-banner .owl-prev:hover, .gallery-banner .owl-next:hover{background : #fff;}
+.gallery-banner .owl-prev.disabled span, .gallery-banner .owl-next.disabled span{color: rgba(0,0,0,0.1);}
+.gallery-banner .owl-prev span, .gallery-banner .owl-next span{font-weight: bolder; font-size: 1em; color: #087955;}
+.gallery-banner .owl-prev{position : absolute;left: 10px;}
+.gallery-banner .owl-next{position: absolute; right: 10px; }
+.gallery-banner .owl-dots{position: absolute; display: flex; flex-direction: row; align-items : center; left : 45%; align-content: center; bottom : 5px; width: auto; height: 20px; background: rgba(0,0,0,0.1); border-radius: 15px;}
+.gallery-banner .owl-dots .owl-dot{display: block; width : 10px; height: 10px; margin: 0 5px; border-radius: 50%; background: rgba(0,0,0,0.4); outline: none;}
+.gallery-banner .owl-dots .owl-dot.active{background: #087955;}
+.gallery-banner .owl-dots .owl-dot span{visibility: hidden;}
+.caro .owl-prev,.caro .owl-next{position : absolute !important; top : 30%!important; font-size : 1.8em!important; width : 30px; height : 100px; outline : none; background : #ffd044!important;}
+.caro .owl-prev{left : 0!important; margin-left : -5px !important;}
+.caro .owl-next{right : 0!important; margin-right : -5px !important;}
+
+
+
+.form-card{
+					display: block;
+					width: 100%;
+					height: 100%;
+					padding: 1%;
+				}
+				.form-card p{font-size: 1.2em; text-align: center; display: block; margin-bottom: 5%;}
+				.form-card span{display: block; width: 100%; padding: 10px; font-size: 0.8em; color : #139bab;}
+				.input-full{width: 100%;height: 30px; margin-bottom: 10px; border: 1px solid #ebebeb;
+					font-size: 0.8em; font-family: "Open Sans"; padding: 0 15px; outline: none; border-radius: 15px;}
+					.form-group{width: 100%; height: auto; display: block;}
+
+
+
+
+
+					.caro-title{color: #087955; display: block; font-size: 1em;padding: 0 1%; width: 100%; height: 30px; margin-bottom: 10px !important;}
+					.caro-title p{width: auto; height : 30px; padding-bottom: 12px; border-bottom: 1px solid #dedada; }
+
+					.caro-inline{display : inline-flex !important; flex-direction: column !important;}
+					.caro {padding : 0 25px;}
+
+					.price-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.price-table td, .price-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.price-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.price-table tr:hover {background-color: #ddd;}
+
+.price-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+@media only screen and (max-width : 768px){
+	.price-table td{font-size : 0.7em !important; padding : 0 3px;}
+	.price-table th{font-size:  0.7em !important; padding: 0 3px;}
+}
+
+
+/*Model Window*/
+
+
+/* --------------------------------
+
+Title: Modal Window
+Descr: A modal dialog used to display critical information.
+
+-------------------------------- */
+/* --------------------------------
+
+x sigin/signup popup
+
+-------------------------------- */
+.cd-signin-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 54, 66, 0.9);
+  z-index: 3;
+  overflow-y: auto;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, visibility 0.3s;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.cd-signin-modal.cd-signin-modal--is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-signin-modal__container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  background: #FFF;
+  margin: 3em auto 4em;
+  cursor: auto;
+  border-radius: 0.25em;
+  -webkit-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
+          transform: translateY(-30px);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.cd-signin-modal--is-visible .cd-signin-modal__container {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.cd-signin-modal__switcher:after {
+  /* clearfix */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cd-signin-modal__switcher li {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.cd-signin-modal__switcher li:first-child a {
+  border-radius: .25em 0 0 0;
+}
+
+.cd-signin-modal__switcher li:last-child a {
+  border-radius: 0 .25em 0 0;
+}
+
+.cd-signin-modal__switcher a {
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #d2d8d8;
+  color: #809191;
+}
+
+.cd-signin-modal__switcher a.cd-selected {
+  background: #FFF;
+  color: #505260;
+}
+
+@media only screen and (min-width: 600px) {
+  .cd-signin-modal__container {
+    margin: 4em auto;
+  }
+  .cd-signin-modal__switcher a {
+    height: 70px;
+    line-height: 70px;
+  }
+}
+
+.cd-signin-modal__form {
+  padding: 1.4em;
+}
+
+.cd-signin-modal__fieldset {
+  position: relative;
+  margin: 1.4em 0;
+}
+
+.cd-signin-modal__fieldset:first-child {
+  margin-top: 0;
+}
+
+.cd-signin-modal__fieldset:last-child {
+  margin-bottom: 0;
+}
+
+.cd-signin-modal__lOpen Sans {
+  font-size: 1.4rem;
+}
+
+.cd-signin-modal__lOpen Sans.cd-signin-modal__lOpen Sans--image-replace {
+  /* replace text with an icon */
+  display: inline-block;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+
+.cd-signin-modal__lOpen Sans.cd-signin-modal__lOpen Sans--username {
+  background-image: url("../img/cd-icon-username.svg");
+}
+
+.cd-signin-modal__lOpen Sans.cd-signin-modal__lOpen Sans--email {
+  background-image: url("../img/cd-icon-email.svg");
+}
+
+.cd-signin-modal__lOpen Sans.cd-signin-modal__lOpen Sans--password {
+  background-image: url("../img/cd-icon-password.svg");
+}
+
+.cd-signin-modal__input {
+  margin: 0;
+  padding: 0;
+  border-radius: 0.25em;
+}
+
+.cd-signin-modal__input.cd-signin-modal__input--full-width {
+  width: 100%;
+}
+
+.cd-signin-modal__input.cd-signin-modal__input--has-padding {
+  padding: 12px 20px 12px 50px;
+}
+
+.cd-signin-modal__input.cd-signin-modal__input--has-border {
+  border: 1px solid #d2d8d8;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.cd-signin-modal__input.cd-signin-modal__input--has-border:focus {
+  border-color: #343642;
+  -webkit-box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
+          box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
+  outline: none;
+}
+
+.cd-signin-modal__input.cd-signin-modal__input--has-error {
+  border: 1px solid #d76666;
+}
+
+.cd-signin-modal__input[type=submit] {
+  padding: 16px 0;
+  cursor: pointer;
+  background: #2f889a;
+  color: #FFF;
+  font-weight: bold;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cd-signin-modal__input[type=submit]:hover, .cd-signin-modal__input[type=submit]:focus {
+  background: #3599ae;
+  outline: none;
+}
+
+.cd-signin-modal__hide-password {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 6px 15px;
+  border-left: 1px solid #d2d8d8;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: #343642;
+}
+
+.cd-signin-modal__error {
+  display: inline-block;
+  position: absolute;
+  left: -5px;
+  bottom: -35px;
+  background: rgba(215, 102, 102, 0.9);
+  padding: .8em;
+  z-index: 2;
+  color: #FFF;
+  font-size: 1.3rem;
+  border-radius: 0.25em;
+  /* prevent click and touch events */
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+  transition: opacity 0.2s 0s, visibility 0s 0.2s;
+}
+
+.cd-signin-modal__error::after {
+  /* triangle */
+  content: '';
+  position: absolute;
+  left: 22px;
+  bottom: 100%;
+  height: 0;
+  width: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid rgba(215, 102, 102, 0.9);
+}
+
+.cd-signin-modal__error.cd-signin-modal__error--is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;
+  transition: opacity 0.2s 0s, visibility 0s 0s;
+}
+
+@media only screen and (min-width: 600px) {
+  .cd-signin-modal__form {
+    padding: 2em;
+  }
+  .cd-signin-modal__fieldset {
+    margin: 2em 0;
+  }
+  .cd-signin-modal__fieldset:first-child {
+    margin-top: 0;
+  }
+  .cd-signin-modal__fieldset:last-child {
+    margin-bottom: 0;
+  }
+  .cd-signin-modal__input.cd-signin-modal__input--has-padding {
+    padding: 16px 20px 16px 50px;
+  }
+  .cd-signin-modal__input[type=submit] {
+    padding: 16px 0;
+  }
+}
+
+.cd-signin-modal__message {
+  padding: 1.4em 1.4em 0;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .cd-signin-modal__message {
+    padding: 2em 2em 0;
+  }
+}
+
+.cd-signin-modal__bottom-message {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -30px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.cd-signin-modal__bottom-message a {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.cd-signin-modal__close {
+  /* form X button on top right */
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  top: -40px;
+  background: url("../img/cd-icon-close.svg") no-repeat center center;
+  color: transparent;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 1170px) {
+  .cd-signin-modal__close {
+    display: none;
+  }
+}
+
+.cd-signin-modal__block {
+  display: none;
+}
+
+.cd-signin-modal__block.cd-signin-modal__block--is-selected {
+  display: block;
+}
+
+
+
+
+.page-article{
+            display : block;
+            width : 100%;
+        }
+        .page-article .article-heading,.page-article .article-sheading{font-family : "Nunito"; color : #ffa500;font-weight: bold; font-size : 5vh; text-align : center;}
+        @media only screen and (max-width : 498px){.page-article .article-heading,.page-article .article-sheading{line-height : 50px;}}
+        .page-article .article{margin-top : 10px;font-family : "Open Sans"; font-size : 1em; line-height : 30px; padding : 0 5%; padding-bottom : 5%; text-align : justify;}
+
+
+
+	.header-nav{
+			position : relative;
+			top : 5px;
+			display : flex;
+			flex-direction : row;
+			width : auto;
+			height : 50px;
+			align-items : center;
+			border : none !important;
+			box-shadow : none !important;
+		}
+
+		.header-nav .header-list a{font-family : "Open Sans"; font-size : 0.8em; text-align: center;}
+		.header-list{height : 100%; border : none; }
+		.header-nav ul{width : auto; height : auto;}
+
+		.header-nav a:hover{background : #f5f5f5 !important;}
+		.header-dropdown{position : absolute; display : block !important; top : 50px; background : #f9f9f9e8; visibility : hidden; z-index : 2;}
+		.header-dropdown li{display : block; width : auto; height : 50px; line-height : 50px; text-align : left !important;}
+		.header-dropdown li a{font-family : "Open Sans"; font-weight : lighter; font-size : 1.2em; text-align : left !important; padding : 0 20px;}
+		.header-dropdown li a:hover{background : #02d67f !important;}
+		.header-dropdown.active{visibility : visible;}
+
+		.cd-main-nav{height : 100%; width : auto; display flex; flex-direction : row; align-content : center;}
+		.cd-main-nav a{height : 50px !important;width : auto; padding : 0 5px; font-family : "Open Sans"; font-size : 1.1em; }
+
+    /*hotel's services navigations design*/
+
+
+    .list-responsive,.gallery-responsive{
+            display : block;
+            align-items : center;
+            width : 100%;
+            height : auto;
+            padding : 1%;
+            background : #ffffff;
+            text-align : center;
+            justify-content : center;
+            font-size : 1em;
+            font-weight : lighter;
+            margin-bottom : 10px;
+            border-radius : 3px;
+        }
+        .list-responsive li{
+            display : inline-block;
+            width : 100px;
+            height : 100px;
+            margin : 5px;
+            background : #ffffff;
+            overflow : hidden;
+            border-radius : 2px;
+            box-shadow : 1px 1px 4px 0px rgba(1, 0, 14, 0.1);
+
+        }
+        @media only screen and (max-width : 498px){
+            .list-responsive {font-size : 0.8em;}
+            .list-responsive li{width : 80px; height : 60px;}
+        }
+        .list-responsive span.icon{
+            width : 100%;
+            height : 50%;
+            padding-top : 10%;
+            color : #ff8686;
+        }
+        .list-responsive span.list-responvive-title{
+            display : block; width : 100%; height : 50%; font-size : 1em;    }
+
+/*Hotel Tab Navigations*/
+
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+  width: 2em;
+  height: 2em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #03b383;
+}
+
+.svg-icon circle {
+  stroke: #03b383;
+  stroke-width: 1;
+}
+
+/*Tab navigation for hotel introductions and more*/
+
+.cd-tabs{
+                display : flex;
+                flex-direction : column;
+                width : 100%;
+                height : auto;
+                background : #ffffff;
+                margin : 20px 0;
+                padding-bottom : 20px;
+                border-radius : 5px;
+                box-shadow : 1px 1px 5px 0px rgba(0, 0, 0, 0.11);
+
+            }
+            .cd-tabs__navigation{display : flex; overflow-x:auto; overflow-y : hidden; flex-direction : row; align-items : center; width : 100%; height : 100%; border-bottom : 1px solid red; margin-bottom : 10px; padding : 0 5%;}
+            .cd-tabs__list{display : flex; flex-direction : row;  align-items : center; width : 100%; height : 100%;}
+            .cd-tabs__list li{display : inline-flex; align-items : center; width : 80px; height : 100%;}
+            .cd-tabs__item{display : block; width : 100%; height : 100%; vertical-align : center; }
+            .cd-tabs__item{text-align : center; color : #b1a6a6; font-size : 0.8em;}
+            .svg-area{width :100%; height : 100%; display : block;  vertical-align : center; padding : 10px 20px 5px 20px; }
+            .cd-tabs__item span{padding-bottom: 5px; display: block;}
+
+
+            .cd-tabs__panels{padding : 1% 5%;}
+            .cd-tabs__panel{display : none;}
+            .tab-about{font-family : "Open Sans"; font-size : 1.2em; line-height : 25px;}
+            .tab-note{font-family : "Verdana"; font-weight : bolder; font-size : 10px; line-height : 15px; color : #b3b3b3;}
+            .cd-tabs__panel--selected{display : flex; flex-direction: column; width : 100%; height : auto; text-align : justify;}
+            .tab-col{border : none; box-shadow : none;}
+            .tab-content{font-family : "Open Sans"; font-size : 1em; line-height : 25px;}
+            .tab-content .content-title{font-weight : bold; display : block; width : 100%;}
+            @media only screen and (max-width : 498px){
+              .tab-content .content-title{text-align : center;}
+            }
+            .tab-content .content-value{display : block; width : 100%; height : auto; padding-left : 5%;}
+            .cd-tabs__item--selected{background : #ffc25236;}
+
+
+
+/*Hotel Cards, Sticky note and Price Card*/
+
+.outer-xcard{display : flex; flex-direction: row; height : 225px; width : 100%; background : none; border-radius : 15px; background : #ffffff;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-left: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 3px 3px 0.1px rgba(0,0,0,0.09);}
+.img-xcard{display : block; width: 300px; background: none;}
+.data-xcard{display : block; float : left; width: calc(100% - 300px); background: none; padding : 1%;}
+.img-xcard img{max-width : 100%; height: auto; border-radius: 15px; border-top-right-radius : 0; border-bottom-right-radius : 0;}
+.xcard-heading{text-align : center; font-family : "Open Sans"; font-size : 1.3em; color : #14c47c;}
+.xmenu{display : block; width: auto; float : left; height : auto; background : #ebebeb; padding: 1%; font-family : "Open Sans";}
+.xmenu li.xmenu-title{font-size : 1.2em; margin-bottom: 5px;}
+.xmenu li{width: 100%;}
+.xtable{padding : 1%; }
+.x-legend{text-align : center; padding-bottom: 10px; color: #14c47c; font-weight: bolder;}
+.table-box{display : inline-block; width: 100%; padding : 1%; font-family : "Open Sans"; height : 90%;}
+.table-box::-webkit-scrollbar { width: 0 !important }
+.table-box li{display: inline-block; padding : 0 10px;}
+.xtable tr td:nth-child(1){padding-right : 10px; color : #f00;}
+.xtable tr td:nth-child(3){padding-left : 10px; color : #09c387;}
+.x-links li{display : inline-block; float : left;height : 50px; width : 50px; background : #ebebeb; padding : 10px 20px;}
+.x-links li a{text-decoration : underline; color : #0006ff; }
+.chit-trigger{position : absolute; width : 50px; height : 50px; background : #616060; border-radius : 50%; right : -10px; top:0;padding:17px; color : #fff;}
+.circle-block{position : absolute; margin : 0; top : 0; right : 20px;width: 160px; height : 160px;}
+@media only screen and (min-width : 1150px){
+    .chit-trigger{display:none;}
+}
+@media only screen and (max-width : 600px){
+    .outer-xcard{height : auto; flex-direction : column; }
+    .img-xcard{width : 100%; height : auto;}
+    .data-xcard{width : 100%;}
+    .img-xcard img{width : 100%; display : flex;border-top-right-radius : 15px;}
+    .chit-trigger{top : 90%; z-index : 1;}
+    .circle-block{top:55%; right : 25%;}
+}
+
+@media only screen and (max-width : 1150px){
+    .chit-trigger{display : block;}
+    .circle-block{display : none;}
+    .table-box{overflow-y:scroll;}
+
+}
+
+
+
+.gallery-responsive{padding : 10px 15%;}
+        @media only screen and (max-width : 768px){
+            .gallery-responsive{padding : 1%;}
+        }
+        .gallery-responsive .gallery-item{
+            width : 200px;
+            height : auto;
+        }
+        .gallery-card{display: inline-block;width: 150px; height: auto; background: #ffffff; border-radius: 2px; box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16); margin: 5px; padding: 2px;}
+
+
+
+.circle {
+	position: relative;
+    display : inline-block;
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border : 5px solid #ffffff;
+    background: #5f5f5f;
+    color : #ffffff;
+}
+.mrp, .discounted{display : flex; align-items : center; padding : 0 5%; width : 65%; height : 50px; position : absolute; top : 40%; border : 5px solid #ffffff;}
+.mrp{background : #ffae00;left : -15%; border-top-left-radius: 15px;border-bottom-left-radius: 15px;}
+.discounted{background : #3cb878;border-top-right-radius: 15px;border-bottom-right-radius: 15px;}
+.mrp span::before{content : ""; display : block; width : 50%; height : 1px; top : 45%;background : #ff6e6e; position : absolute;}
+.discounted{right : -15%;}
+.mrp span, .discounted span{text-align : center; font-family : "Arial"; font-size : 1em; }
+.discounted span{font-weight : bolder; color : #cbfcbf}
+.discount{
+    display : block; margin-top: 20%; font-family : "Open Sans";  font-size : 2em; text-align: center;
+}
+.service{ display : block; margin-top: 30%; text-align: center; font-family : "Open Sans";  font-size : 1em;}
+
+
+.package-title{width : 100%; padding : 0 15%; font-size : 2em; font-family : "Open Sans"; text-align : center; color : #ffffff; text-shadow : 2px 2px 6px rgb(0, 0, 0)}
+.package-title{width : 100%; padding : 0 15%; font-size : 2em; font-family : "Open Sans"; text-align : center; color : #ffffff; text-shadow : 2px 2px 6px rgb(0, 0, 0)}
+
+
+
+
+.circle-block{margin :0 auto;}
+.add-to-cart{display : block; width : 60%; height : 50px; margin : 0 20%; outline : none; background : #fb5858; font-size : 1.5em; font-family : "Open Sans"; color : #ffffff;border : 5px solid #ffffff; border-radius : 15px;}
+.sticky-note p{text-align : center; line-height : 50px;}
+.rating{color : #ffd047; font-size : 2em; text-align : center;}
+h2.c-title{ text-align: center; font-size : 2em; line-height : 50px; font-family : 'Open Sans';"}
+
+
+
+
+
+ .small-circle .discount{font-size : 1em;}
+            .small-circle .strike:before{left : 30%; top : 30%;}
+
+
+/*TESTIMONIAL IMAGE AND CONTENT BANNER*/
+.testi{margin: 0 !important;}
+		.testi-row .column{padding : 0 !important;}
+		.testi-content{padding : 5%;}
+		.testi-content h3{margin-bottom: 10px;}
+		.testi-content ul{width: 100%; height: 50px;}
+		.testi-content li{display: inline-block; width: auto; height: 100%; padding : 0 10px; margin-top: 10px;  border-radius: 5px;}
+
+		.testi-content li a{display: block; width: auto; height: 100%; padding : 15px;color: #ffffff; transition: background 0.5s;}
+		.testi-content li a:hover{background: #ebebeb; border-radius: 3px; color: #000;transition: background 0.5s;}
+		.testi-space{padding:  15px !important;}
+		.testi-heading{font-family : "Quicksand Light"; font-size : 1.5em; text-align : center; color : #ffffff;}
+		.testi-space p{font-family : "Exo 2"; text-align : center; font-size : 1.2em; color : #ffffff; text-align: justify; font-weight: lighter;}
+
+/*NEW CARD WITH GRADIENT DESIGN*/
+
+.pro-card{
+			display : inline-block;
+			width : 200px;
+			height : 350px;
+			background : #ffffff;
+			box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.11);
+			border-radius: 15px;
+			margin : 2% 1%;
+		}
+		.pro-upper{
+			padding : 5%;
+			height : 200px;
+			width: 100%;
+			border-top-right-radius: 15px;
+			border-top-left-radius: 15px;
+			background-color: #FBAB7E;
+			background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+			box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.11)
+
+		}
+		.pro-heading-block{width: 100%; height : 50px;}
+		.pro-heading{font-family : "Roboto"; font-size : 1.2em; text-align : center; color : #000;}
+		.pro-img{display : block;
+			position: relative;
+			top : 5%;
+			width : 100%;
+			height : 100%;
+			background: #ffffff;
+			border : 10px solid #ffd767;
+			border-radius: 50%;
+		}
+		.pro-lower{
+			width: 100%;
+			height : 150px;
+			padding-top : 25%;
+			overflow: hidden;
+		}
+
+		.pro-lower .price{font-family : "Ubuntu"; text-align : center; font-size : 1.5em;}
+		.pro-lower .max-price{font-family : "Ubuntu"; text-align : center; font-size : 1em;  text-decoration: line-through;}
+		.pro-controls{text-align : center;}
+		.btn-basket{background: #fdad34; border : none; outline : none; width: auto; height : 50px; border-radius: 5px; padding : 10px; box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.11); margin-top : 5px;}
+
+
+/*Quick Box Settings*/

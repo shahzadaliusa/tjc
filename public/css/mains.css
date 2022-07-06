@@ -1,0 +1,1147 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img,ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, lOpen Sans, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section,summary,time, mark, audio, video {	margin: 0;	padding: 0;	border: 0;	font-size: 100%;	font: inherit;	vertical-align: baseline;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {	display: block;}
+body {    font-family: "Open Sans";	line-height: 1;}
+ol, ul {	list-style: none;}
+blockquote, q {	quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}
+table {	border-collapse: collapse;	border-spacing: 0;}
+/*Resetting Ended. Actual Coding Started*/
+
+*,*:before,*:after{box-sizing: border-box;}
+a{text-decoration: none; color: #000;}
+/*Simple Header Design*/
+header{
+    display: flex;
+    padding: 0 1%;
+    width: 100%;
+    height: 50px;
+    background: #ffffff;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.09);
+}
+
+.hblock{
+    display: inline-flex;
+    height: 50px;
+    flex-direction: row;
+}
+
+.hleft{flex-grow: 1;}
+.hcenter{flex-grow: 2;}
+.hright{flex-grow: 1; flex-basis: 50px; max-width: 50px;}
+.trigger-block{height: 50px; width: 50px;}
+.logo-block{height: 50px; width: auto;}
+.logo{display: block; font-family: "Open Sans"; font-size: 1.2em; height: 50px; padding: 12px; text-shadow: 3px 2px 1px rgba(0,0,0,0.1);color: #b05eec;}
+
+/*Simple Header Design Ended*/
+
+/*Left Navigation Started*/
+.left-nav{
+    display: block;
+    max-width: 200px;
+    height: auto;
+    background: #ffffff;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.09);
+}
+.left-nav a{
+    display: block;
+    width: auto;
+    height: 50px;
+    padding: 15px;
+}
+.left-nav a:hover{
+    background: #ebebeb;
+    color: #ccc;
+}
+
+/*left Nav Ended*/
+
+/*hidden classes*/
+.inactive{
+    display: none;
+}
+
+/*Setting Up The Slider*/
+
+/*iconic animations */
+.btn-block span{
+                display: block;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin: 10px;
+                transition: background 0.7s;
+
+            }
+            .btn-block span:hover{
+                background: #ebebeb;
+                transition: background 0.7s;
+            }
+            .btn-block i{
+                    padding: 7.1px 8px;
+
+            }
+
+/*1. Header Block Settings for Dekstop View and Mobile View*/
+
+.header{
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	height: 35px;
+	box-shadow : 1px 1px 1px 0px rgba(230, 196, 255, 0.5);
+	background: #fff;
+	padding: 0 10px;
+	z-index: 100;
+}
+
+
+@media only screen and (min-width: 786px) {
+	.header{
+		height: 50px;
+	 }
+}
+/*Header's Trigger Setting for Desktop and Mobile Views*/
+/*------------1.1. BLOCK CONTAINS BOTH LOGO AND NAVIGATION TRIGGER--------*/
+.navigation{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: auto;
+	height: 100%;
+}
+
+/*---------1.1.1. THE NAVIGATION TRIGGER BLOCK SETTINGS FOR MOBILE VIEW AND DESKTOP VIEW---------*/
+
+.nav-trigger-block{
+	display: flex;
+	align-items: center;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+}
+
+@media only screen and (min-width: 786px) {
+	.nav-trigger-block{
+		width: 30px; height: 30px;
+	}
+}
+
+/*--------------1.1.1.1. THE ACTUAL NAVIGATION TRIGGER----------*/
+
+.nav-trigger, .btn-circle {
+	display: flex;
+	align-items: center;
+	border: none;
+	background: none;
+	outline: none;
+	color: #000;
+	border-radius: 12px;
+	width: 24px;
+	height: 24px;
+	transition: background 0.5s;
+}
+
+
+.nav-trigger:hover, .btn-circle:hover{
+	background: #ebebeb;
+}
+
+.active:focus{
+	background: #ccc;
+}
+
+/*----------1.2. THE LOGO BLOCK OF HEADER----------*/
+.nav-logo{
+
+	font-size: 1.2em;
+	padding: 0 15px;
+	text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+	color: #5347ff;
+	margin-bottom: 2px;
+}
+
+/*----------1.2.1. THE ACTUAL LOGO--------*/
+
+.header-logo{
+  display: block;   /*our logo is block level element*/
+  width: auto;      /*which have auto width*/
+  font-family: "Open Sans";/*Font family is different for logo*/
+  font-size: 1.2em;       /*font size for logo and text color*/
+  color: #fff;
+}
+
+
+
+
+
+/************************STARTING OUR NAVIGATION BAR DESIGN************************/
+
+/*-----SETTING UP <ASIDE> TAG OUTSIDE FROM HEADER BLOCK SO HEADER'S FIXED POSITION NOT AFFECT ITS POSITION------*/
+/*----Remember that our nav area is full width container----*/
+.nav-area{
+  position: fixed;    /*side navigation is fixed and top from 50 px and occupy full hight and width of webpage*/
+  left: 0;
+  height: 100%;
+  width: 100%;        /*full width occupied by side nav block element*/
+  overflow: hidden;   /*here overflow hidden for page not show scroll bar if list is large on right hand side of webpage becoz it is full width block*/
+  pointer-events: none;
+  visibility: hidden;
+  background: #fbfbfb;
+z-index: 3;
+
+
+}
+/*nav area's active state visible the side navigation container*/
+.navbar--activated{
+  visibility: visible;
+  pointer-events: auto;
+    z-index: 3 !important;
+}
+
+
+/*------2.1. THIS IS <NAV> TAG SETTING INSIDE ASIDE-----*/
+/*Here is a need to transformation setting for visiblity of side navigation*/
+/*we will set transformation setting later*/
+.nav-container{
+  position: relative;
+  width: 100%;
+  margin-top: 35px;
+  max-width: 250px;
+  background: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+
+}
+/*-----2.1.X.X.X.X.X. ALL LINKS INSIDE NAV CONTAINER WHEN IN HOVER STATE THEIR BACKGROUND CHANGED-----*/
+.nav-container a:hover{background: #ebebeb;}
+
+ @media only screen and (min-width: 768px){
+ 	.nav-container{
+ 		margin-top: 50px;
+ 	}
+ }
+/*----------2.1.1. CLOSE BUTTON ON NAVIGATION PANEL TO HIDE THE NAVIGATION------- */
+ .nav-trigger-hide{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  display: block;
+  top: 0;
+  left: 0;
+  border: none;
+  outline: none;
+  background: none;
+  margin: 5px;
+  color: #fff;
+}
+
+.nav-trigger-hide:hover{
+	background: #7fc7b7;
+}
+
+/*----------2.1.2. THE HEADER OF NAVIGATION PANEL----------*/
+.nav-container header{
+  width: 100%;
+  height: 120px;
+  background: #23a079;
+  color: #fff;
+  padding: 50px 10px 2px 10px;
+
+}
+/*----------2.1.2.1. THE HEADING APPEARS ON NAVIGATION HEADER -------*/
+.nav-container header h1{
+	display: block;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.3em;
+	font-weight: bolder;
+}
+
+/***********************************2.1.3.x.x.x.x.x.x...LIST ITEMS OF NAVIGATION BAR************************/
+/*------1. FOR THE FIRST LEVEL LIST-------*/
+/*this list appears very first when navbar triggered with a header, and close button on the top of navbar*/
+/*we need right arrow logo for those list items they have childrens*/
+/*-------L1.1. THE FIRST UL AREA FOR LIST ITEMS----------  */
+.ul-first-area{
+  width: 100%;
+  height: 75%;
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
+/*-------L1.1.1. THE LIST ITEMS OF FIRST LEVEL--------*/
+.ul-first-area li{
+  height: 40px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+ /*----------L1.1.1.1. THE LINKS OF FIRST LEVEL LI ELEMENTS-------*/
+.ul-first-area a{
+  font-size: 1.2em;
+  color: #23a079;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-size: 1.1em !important;
+  font-weight: bolder !important;
+  font-variant-caps: petite-caps !important;
+  font-weight: lighter;
+  font-size: 100%;
+  border-bottom: 1px solid #ebebeb;
+  transition: background 0.2s;
+}
+
+/**********************NEXT LEVEL LIST ITEMS - SECOND LEVEL*****************/
+
+/*********FOR MOBILE VIEWS WE ADD SEPARATE CLASS FOR NEXT LEVEL LIST ITEMS********/
+
+/*because in mobile view all next level list items appear on the same same space-------*/
+
+.ul-second-area{  /*the ul-mobile-area is for all list levels that have childs will be of same design*/
+  position: absolute;
+  top: 0;
+  margin-top: 0;
+  padding: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background: #fff;
+  font-size: 12px;
+  overflow-y: scroll;
+  visibility: hidden;
+}
+
+/****************THE ALL LEVEL LIST ITEMS BACK BUTTON SETTING FOR MOBILE VIEW*****************/
+
+.active .ul-second-area{visibility: visible;}
+@media only screen and (min-width: 768px) {
+.ul-second-area{
+  display: block;
+  margin: 0;
+  top:0;
+  padding: 15px 25px 15px 25px;
+  left: 250px;
+  width: 450px;
+  height: 92%;
+  background: #fbfbfb;
+  overflow-y: scroll;
+  visibility: hidden;
+}
+
+}
+
+
+@media only screen and (min-width: 768px) {
+	.ul-second-area .has-child{
+		display: inline-flex;
+		flex-direction: column;
+		width: 200px;
+		height: 200px;
+		margin: 5px;
+		text-align: center;
+		font-size: 12px;
+		font-weight: lighter;
+		overflow-y: auto;
+	}
+
+	
+	.ul-second-area li{
+		height: 20px;
+		line-height: 20px;
+	}
+	.ul-second-area a{
+		display: inline;
+		height: 20px;
+		border: none;
+		line-height: 20px; 
+	}
+	.has-child ul{
+		
+		margin: 0;
+		padding: 0;
+		text-align: left;
+	}
+}
+
+
+
+
+
+/*Control Buttons for Navigation list items to ge back or see all*/
+
+.menu-controls{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 40px;
+}
+.back-li{
+	position: absolute;
+	display: block;
+	position: relative;
+	display: block;
+	width: 50%;
+	height: 30px !important;
+}
+.back-li a{border: none;}
+
+.see-all{
+	position: absolute;
+	display: block;
+	float: right;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 30px;
+	text-align: right;
+	font-size: 1.2em;
+}
+
+@media only screen and (min-width: 768px){
+	.menu-controls{
+
+		padding-top: 10px;
+	}
+
+	.see-all{margin-top: 10px;}
+}
+
+
+/*NOW SETTING THIRD LEVEL LIST ITEMS*/
+
+
+
+@media only screen and (min-width: 768px){
+	.active .ul-next-level{visibility: visible;}
+}
+
+@media only screen and (max-width: 768px){
+	
+	.active .ul-next-level {
+		position: absolute;
+  		top: 0;
+  		margin-top: 0;
+		padding: 0;
+		left: 0;
+		height: 100%;
+		width: 250px;
+		background: #fff;
+		font-size: 12px;
+		overflow-y: scroll;
+		visibility: hidden;
+	}
+
+	.active .ul-next-level .active{visibility: visible;}
+}
+
+/*Setting of All Deep level List items*/
+/*1. Header Block Settings for Dekstop View and Mobile View*/
+
+.header{
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	height: 35px;
+	box-shadow : 1px 1px 1px 0px rgba(230, 196, 255, 0.5);
+	background: #fff;
+	padding: 0 10px;
+	z-index: 100;
+}
+
+
+@media only screen and (min-width: 786px) {
+	.header{
+		height: 50px;
+	 }
+}
+/*Header's Trigger Setting for Desktop and Mobile Views*/
+/*------------1.1. BLOCK CONTAINS BOTH LOGO AND NAVIGATION TRIGGER--------*/
+.navigation{
+	display: flex;
+	flex-direction: row;
+	flex-grow: 2;
+	align-items: center;
+	width: auto;
+	height: 100%;
+}
+
+/*---------1.1.1. THE NAVIGATION TRIGGER BLOCK SETTINGS FOR MOBILE VIEW AND DESKTOP VIEW---------*/
+
+.nav-trigger-block, .btn-block{
+	display: flex;
+	align-items: center;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+}
+
+@media only screen and (min-width: 786px) {
+	.nav-trigger-block{
+		width: 30px; height: 30px;
+	}
+}
+
+/*--------------1.1.1.1. THE ACTUAL NAVIGATION TRIGGER----------*/
+
+.nav-trigger, .btn-circle {
+	display: flex;
+	align-items: center;
+	border: none;
+	background: none;
+	outline: none;
+	color: #000;
+	border-radius: 12px;
+	width: 24px;
+	height: 24px;
+	transition: background 0.5s;
+}
+
+
+.nav-trigger:hover, .btn-circle:hover{
+	background: #ebebeb;
+}
+
+.active:focus{
+	background: #ccc;
+}
+
+/*----------1.2. THE LOGO BLOCK OF HEADER----------*/
+.nav-logo{
+
+	font-size: 1.2em;
+	padding: 0 15px;
+	text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+	color: #5347ff;
+	margin-bottom: 2px;
+}
+
+/*----------THE SEARCH TRIGGER DESIGN ISSUES--------*/
+
+
+button{border: none; background: none;}
+
+
+
+.search-box{
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			align-items: right;
+			flex-grow: 1;
+			width: 50px;
+			height: 50px;
+		}
+
+		.search-trigger{
+			width: 25px;
+			height: 25px;
+			pointer-events: auto;
+			cursor: pointer;
+		}
+
+		.search-container{
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: #373244;
+			visibility: hidden;
+			
+		}
+
+		.active{visibility: visible; z-index: 111;}
+
+		.search-close{color: #fff;}
+		.search-header{
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			width: 100%;
+			height: 50px;
+			background:#000;
+			box-shadow: 1px 1px 0px 0px rgb(255, 245, 245);
+			padding: 0 20px;
+		}
+
+		.search-container button{width: 50px; height: 50px;}
+		.search-container button:hover{background: #3b3b3b;}
+
+		.search-form{display: flex; flex-direction: row; align-items: center; padding: 0 15px; height: 40px; flex-grow: 1;}
+
+
+		/*Resetting input field for varius browsers*/
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration,
+{
+	display: none;
+}
+
+input[type=search]{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	-o-appearance:none;
+	appearance:none;
+	border:none;
+}
+/*designing our input field*/
+input[type="search"]{
+	border-radius: 50px;
+}
+
+#search{
+	display: block;
+	height: 90%;
+	width: 90%;
+	font-size: 1.6rem;
+	font-family: "Open Sans";
+	font-weight: lighter;
+	padding: 0 2em 0 1em;
+	color: #555;
+	transition: transform 0.3s, opacity 0.3s, background 0.9s;
+	border-style:none;
+}
+
+#search:focus{
+	outline: none;
+	background: #e0e0e0;
+}
+
+#searching{
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	border: none;
+	word-wrap: nowrap;
+	margin: 0 5px;
+	background: #fff;
+
+}
+
+.search-suggestion{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+	padding:0 20px;
+	background: #fff;
+}
+
+
+
+/*********************GRID SYSTEM*******************************/
+li{list-style: none;}
+a{text-decoration: none;}
+.row, .column {box-sizing: border-box;}
+.row:before,.row:after {
+	/*Before and after the rendering of row and column the content is empty and this displayed as table fashion*/
+	content: " ";
+	display: table;
+}
+.row:after {
+	/*in order to align the columns horizontally, grid system will float the columns. this means you need to clear the floating elements
+	in the row to maintain the structure of the layout. this is where a clearfix comes in. by applying clearfix, row will accomodate the column it 
+	contains without adding to the markup.
+	*/
+	clear: both;
+}
+.column {
+	/*here the column positioned relatively to allow any absolutely positioned content within the column to be position relative to that column.
+	the column is then floated left for horizontal alignment, which will cause the element to become display:block; even if it did not start out the way
+	*/
+	position: relative;
+	float: left;
+	display: block;
+	margin-bottom: 1.6%;
+}
+
+.column + .column {
+	/*Gutters helps to create separation between columns. We set adjacent siblings left and bottom margin*/
+	margin-left: 1.6%;
+}
+/*In 12 grid system, we have calculated all possible widths for each type of column*/
+.column-1 {    width: 6.86666666667%;}
+.column-2 {    width: 15.3333333333%;}
+.column-3 {    width: 23.8%;}
+.column-4 {    width: 32.2666666667%;}
+.column-5 {    width: 40.7333333333%;}
+.column-6 {    width: 49.2%;}
+.column-7 {    width: 57.6666666667%;}
+.column-8 {    width: 66.1333333333%;}
+.column-9 {    width: 74.6%;}
+.column-10 {    width: 83.0666666667%;}
+.column-11 {    width: 91.5333333333%;}
+.column-12 {    width: 100%;margin-left: 0;}
+/*This is for mobile layout*/
+@media only screen and (max-width: 550px) {
+	.column-1,.column-2,.column-3,.column-4,.column-5,.column-6,.column-7,.column-8,.column-9,.column-10,.column-11,.column-12 {
+        float: none; width: auto; 
+    }
+    .column + .column {
+    	/*In small screens, gutter is zero.*/
+            margin-left: 0;
+        }
+}
+
+@media only screen and (max-width: 550px) { 
+	.row { 
+		margin-bottom: 0; 
+	}
+    .column { 
+    	margin-bottom: 10px;
+    }
+    .row:last-child .column:last-child { 
+        margin-bottom: 0;   
+    }
+}
+
+/*Now we styling each column basically*/
+
+.column {
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-left: 1px solid rgba(0,0,0,0.05);
+    border-radius: 2px;
+    color: #777;
+    padding: 5px;
+    min-height: 50px;
+    box-shadow: 0 3px 3px 0.1px rgba(0,0,0,0.09);
+
+}
+
+.row {    margin-bottom: 10px;}
+.row:last-child {    margin-bottom: 0;}
+.column .column {    box-shadow: none; border:none;}
+
+/*------------------------------GRID ENDS-------------------------------------*/
+
+
+/*******************************GRID FOR SEE ALL CATEGORIES AND PAGE DESIGN*************************/
+
+/*------------------------------------ENDED------------------------------------*/
+
+
+/*******************************OWL CAROUSEL SETTINGS*************************************/
+
+    main{
+        display: block;
+        position: relative;
+        top: 50px;
+        width: 100%;
+        height: auto;
+        padding: 1%;
+        z-index: 2;
+    }
+    .my-carousel{
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 210px;
+        padding: 5px;
+        border-radius: 3px; 
+
+    }
+    .owl-stage-outer{align-items: center;height: 200px;}
+    .owl-stage{height: 200px;}
+    .owl-item{
+        max-width: 200px;
+        min-width: 200px !important;
+        height: 200px;
+        background: #fff;
+        margin: 0 5px;
+		border: 1px solid rgba(0,0,0,0.05);
+		border-radius: 2px;
+    }
+
+    .owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled{display: block;}
+    
+    .owl-prev, .owl-next{position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background: #000;}
+    
+    .owl-prev{left: 5px;}
+    .owl-next{right: 5px;}
+    .owl-dot{display: none; visibility: hidden;}
+    
+    .carousel-title{display: block;width: 100%; height: 30px; padding: 5px;}
+    .carousel-title h1{text-align: center; font-size: 1.2em; font-variant-caps: all-petite-caps; font-weight: bold;}
+    
+/********************************Ended****************************/
+/************FOOTER********************************/
+    
+    
+    
+    
+    
+    
+    footer{
+  display: flex;
+  margin-top: 50px;
+  position: relative;
+  bottom: 0;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
+  background: #23a079;
+
+}
+
+.footer-block{
+  background: transparent;
+  flex-basis: 200px;
+  height: auto;
+  flex-grow: 1;
+  padding: 15px;
+  font-family: "Verdana";
+  border-right: 1px dashed #ffffff;
+
+}
+
+
+
+.footer-block h3{
+  text-align: center;
+  font-weight: normal;
+  height: 30px;
+  line-height: 30px;
+}
+
+.footer-block a{
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  font-size: 0.8em;
+}
+
+.footer-block p{
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  font-size: 0.8em;
+}
+
+address{
+  display: block;
+  height: auto;
+  line-height: 20px;
+  font-size: 0.8em;
+}
+
+
+
+.footer-end{
+  width: 100%;
+  height: 100px;
+  background: #000;
+
+}
+/*---------------------------------ENDED----------------------------*/
+
+
+/****************************GRID For Categories********************/
+.grid, .grid-block {box-sizing: border-box;}
+.grid:before,.grid:after {
+	/*Before and after the rendering of grid and grid-block the content is empty and this displayed as table fashion*/
+	content: " ";
+	display: table;
+}
+.grid:after {
+	/*in order to align the grid-blocks horizontally, grid system will float the grid-blocks. this means you need to clear the floating elements
+	in the grid to maintain the structure of the layout. this is where a clearfix comes in. by applying clearfix, grid will accomodate the grid-block it 
+	contains without adding to the markup.
+	*/
+	clear: both;
+}
+.grid-block {
+	/*here the grid-block positioned relatively to allow any absolutely positioned content within the grid-block to be position relative to that grid-block.
+	the grid-block is then floated left for horizontal alignment, which will cause the element to become display:block; even if it did not start out the way
+	*/
+	position: relative;
+	float: left;
+	display: block;
+	margin-bottom: 1.6%;
+}
+
+
+
+
+/*This is for mobile layout*/
+@media only screen and (max-width: 550px) {
+	.grid-block-1,.grid-block-2,.grid-block-3,.grid-block-4,.grid-block-5,.grid-block-6,.grid-block-7,.grid-block-8,.grid-block-9,.grid-block-10,.grid-block-11,.grid-block-12 {
+        float: none; width: auto; 
+    }
+    .grid-block + .grid-block {
+    	/*In small screens, gutter is zero.*/
+            margin-left: 0;
+        }
+}
+
+@media only screen and (max-width: 550px) { 
+	.grid { 
+		margin-bottom: 0; 
+	}
+    .grid-block { 
+    	margin-bottom: 10px;
+    }
+    .grid:last-child .grid-block:last-child { 
+        margin-bottom: 0;   
+    }
+}
+
+/*Now we styling each grid-block basically*/
+
+.grid-block {
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-left: 1px solid rgba(0,0,0,0.05);
+    border-radius: 2px;
+    color: #777;
+    padding: 5px;
+    min-height: 50px;
+    box-shadow: 0 3px 3px 0.1px rgba(0,0,0,0.09);
+
+}
+
+.grid {    padding: 50px 10px;}
+.grid:last-child {    margin-bottom: 0;}
+.grid-block .grid-block {    box-shadow: none; border:none;}
+
+.grid-block{
+	width: 10%;
+	height: 150px;
+	min-width: 100px;
+}
+.grid-image{display:block;position: relative;width: 100%; height: 80%; overflow: hidden; }
+
+.grid-image img{display:block; float: left; width:100%; height: auto; overflow: hidden;box-shadow: 1px 1px 1px rgba(0,0,0,0.5);}
+.grid-title{display:block; position:absolute;left: 0; bottom: 0;width: 100%; height: 20%; bottom: 0;}
+.grid-title{text-align: center; font-size: 0.9em; padding: 0 5px;}
+.grid-data{position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 15% 20%;background: none; }
+@media only screen and (max-width: 768px){.grid-title{font-size: 0.7em;}}
+
+/*--------------------------ENDED--------------------------*/
+
+
+/*-----------------------CYCLE SLIDER-----------------------*/
+.cycle-slideshow .cycle-prev,.cycle-slideshow .cycle-next{
+  z-index: 1111;
+  color: #ffffff;
+  font-size: 200%;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  margin-top: -10px;
+}
+.cycle-prev,.cycle-next{
+    width: 50px;
+    height: 50px;
+    background: #000;
+    color: #fff;
+}
+.cycle-prev{
+    
+  left: 0;
+}
+
+.cycle-next{
+  right: 0;
+}
+
+
+.cycle-pager{
+  width: 100%;
+  text-align: center;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+}
+
+.cycle-pager span{
+  width: 12px;
+  height: 12px;
+  display: inline-flex;
+  border: 1px solid #ffffff;
+  margin: 0 10px;
+  border-radius: 50%;
+  text-indent: 100%;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.cycle-pager .cycle-pager-active{
+  background: #ffffff;
+}
+
+
+.cycle-container .st-slider{
+  width: 100%;
+  padding: 20px 0;
+}
+
+.cycle-container .st-slider img{
+  	width: 100%;
+    max-height: 300px;
+    border-radius: 3px;
+}
+
+
+.carousel-wrapper{
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.cycle-sidebar{
+	border : none;
+	background: none;
+	box-shadow: none;
+}
+@media only screen and (max-width:767px){
+	.cycle-sidebar{display: none;}
+}
+
+
+
+/****************PORTFOLIO CARDS*************************/
+.cards{
+	height: 220px;
+}
+.card-block{
+	display: block;
+	background: #eef3f8;
+	width: 200px;
+	height: 200px;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.05);
+	margin:0;
+}
+
+/**********************PLACE PAGE*****************************/
+.header-fix{
+        position : fixed;
+        top : 50px;
+        left : 0;
+        height : auto;
+        display : flex;
+        flex-direction : column;
+        align-items:center;
+        width : 100%;
+        background : #fff;
+        z-index : 1;
+    }
+
+.menu{
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    width : 100%;
+    height: 50px;
+    padding : 0 5%;
+    height:auto;
+    background :#fff;
+    display:none;
+    z-index:1;
+}
+.menu li{
+    display : inline-block;
+    width :auto;
+    height:30px;
+    padding: 0 20px;
+    
+}
+
+.menu a{
+    font-family: "Open Sans";
+    color:#99742e;
+    display:block;
+    width:100%;
+    height:30px;
+    line-height:30px;
+}
+
+@media only screen and (max-width:768px){
+    .menu{flex-direction: column; justify-content: center;}
+    .menu li{display: block; width:100%;}
+    .menu a{text-align: center;}
+}
+.active{display:flex;}
+
+
+
+.page-title{font-family : 'Cinzel Decorative'; font-weight:bolder; font-size : 1.5em; display : block;height : 50px; line-height : 30px; padding : 0 5px;}
+.page-title a{color:#99742e;}
+.page-title i{padding : 0 5px; color : #f16161d6;}
+.image-block img{position:relative;display:block; width:100%; height:auto; box-shadow : 0 0 10px 0px rgb(0, 0, 0); margin-top:100px; border-radius: 3px;}
+.image-block{display:block; width:100%; height:auto; padding: 1% 20%;}
+@media only screen and (max-width:768px){
+    .image-block{padding: 1% 0;}
+    .header-fix{top:35px;}
+    .page-title{font-size : 1em; font-weight:bold;}
+}
+footer{margin-top:150px;}
+.about{
+    display:block;
+    padding : 2%;
+}
+
+.about h1{
+    font-family:'Acme';
+    font-size : 1.7em;
+    text-align:center;
+    font-weight:bolder;
+    color:#47c2ff;
+}
+.about h2{
+    font-family: 'Acme';
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    color: #f96f8d;
+}
+
+.about h3{font-family:'IM Fell English';
+font-size:1em;
+text-align: center;
+font-weight: bold;}
+.about p{
+    font-family : 'IM Fell English';
+    font-size:1.1em;
+    line-height: 25px;
+}
+
+
+
+.notes,.warning{
+    display:block;
+    width: 100%;
+    height: auto;
+    padding : 15px;
+    margin:15px 0;
+    border-radius:3px;
+}
+
+.notes{background:#f6f6f6;}
+.warning{background:#fffec5;}
+
